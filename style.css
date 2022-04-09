@@ -6,3 +6,13 @@ html, body {
 canvas {
   display: block;
 }
+
+#gameCanvas {
+  display: flex;
+  justify-content: center;
+}
+
+#startNewGame {
+  display: flex;
+  justify-content: center;
+}
