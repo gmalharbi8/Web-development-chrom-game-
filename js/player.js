@@ -3,6 +3,7 @@ class Player {
         this.size = 130;
         this.xAxis = 50;
         this.yAxis = height - this.size;
+        // this.yAxis = 50;
         this.velocityYAxis = 0;
         this.gravity = 3;
     }

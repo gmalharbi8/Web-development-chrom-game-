@@ -4,6 +4,7 @@ let obstacleImage;
 let backgroundImage;
 let obstacles = [];
 let soundClassifier;
+let gameStarted;
 
 function preload() {
   const options = {
@@ -20,9 +21,13 @@ function mousePressed() {
 }
 
 function setup() {
-  createCanvas(800, 450);
+  let canvas = createCanvas(800, 450);
+  canvas.parent("gameCanvas");
+  gameStarted = false;
   player = new Player();
   soundClassifier.classify(gotCommand);
+  background(backgroundImage);
+  player.display();
 }
 
 
@@ -43,6 +48,11 @@ function keyPressed() {
   }
 }
 
+function startGame() {
+  gameStarted = true;
+  loop();
+}
+
 function restartGame() {
   player = new Player();
   obstacles = [];
@@ -51,30 +61,32 @@ function restartGame() {
 }
 
 function draw() {
-  if (random(1) < 0.005) {
-    obstacles.push(new Obstacle());
-  }
-  background(backgroundImage);
-  for (let obstacle of obstacles) {
-    obstacle.move();
-    obstacle.display();
-    if (player.isCollision(obstacle)) {
-      Swal.fire({
-        title: 'Game Over',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Retry'
-      }).then((result) => {
-        restartGame();
-        if (result.isConfirmed) {
-          loop();
-        }
-      });
-      noLoop();
+  if (gameStarted) {
+    if (random(1) < 0.005) {
+      obstacles.push(new Obstacle());
     }
+    background(backgroundImage);
+    for (let obstacle of obstacles) {
+      obstacle.move();
+      obstacle.display();
+      if (player.isCollision(obstacle)) {
+        Swal.fire({
+          title: 'Game Over',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Retry'
+        }).then((result) => {
+          restartGame();
+          if (result.isConfirmed) {
+            loop();
+          }
+        });
+        noLoop();
+      }
+    }
+    player.display();
+    player.move();
   }
-  player.display();
-  player.move();
 }
