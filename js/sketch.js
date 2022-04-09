@@ -26,7 +26,6 @@ function setup() {
 }
 
 
-
 function gotCommand(error, results) {
   if (error) {
     console.log(error);
@@ -44,6 +43,13 @@ function keyPressed() {
   }
 }
 
+function restartGame() {
+  player = new Player();
+  obstacles = [];
+  background(backgroundImage);
+  player.display();
+}
+
 function draw() {
   if (random(1) < 0.005) {
     obstacles.push(new Obstacle());
@@ -53,7 +59,19 @@ function draw() {
     obstacle.move();
     obstacle.display();
     if (player.isCollision(obstacle)) {
-      console.log('game over');
+      Swal.fire({
+        title: 'Game Over',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Retry'
+      }).then((result) => {
+        restartGame();
+        if (result.isConfirmed) {
+          loop();
+        }
+      });
       noLoop();
     }
   }
