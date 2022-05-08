@@ -42,7 +42,7 @@ By using draw.io tool
 
 ![6C47328F-F307-4338-B585-395D3F60318E](https://user-images.githubusercontent.com/102873246/167279333-3909b012-62e5-4fd4-8f58-3c74938ae306.jpeg)
 
-### Start Of Game:
+### Start of Game:
 
 ![4BBAA827-B625-484E-97CE-DE50784E9B82](https://user-images.githubusercontent.com/102873246/167279341-aa1a1fa4-3ff8-4500-9794-daf3747f9342.jpeg)
 
