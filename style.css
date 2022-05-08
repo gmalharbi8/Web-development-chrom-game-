@@ -15,4 +15,115 @@ canvas {
 #startNewGame {
   display: flex;
   justify-content: center;
+  margin-top: 2%;
+}
+
+body {
+  background-color: rgba(141, 212, 245, 0.333)
+}
+
+h1 {
+  margin: 0% 0%;
+  color: rgb(0, 20, 199);
+}
+
+h2 {
+  text-align: center;
+  margin: 10% 20%;
+}
+
+#container {
+  border-radius: 10px;
+  padding: 25px 30px;
+  color: rgb(0, 20, 199);
+  font-weight: bold;
+}
+
+#sub_container2 {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  width: 350px;
+  height: 400px;
+  padding: 30px;
+  padding-bottom: 40px;
+  margin: auto 38.5%;
+  margin-top:4%;
+  color: rgb(0, 20, 199);
+  font-weight: bold;
+}
+
+#sub_container1 {
+  margin: auto 38.5%;
+}
+
+table {
+  margin: 0 auto;
+}
+
+#highest_scores_table_div {
+  margin: 1% 38.5%;
+}
+
+#highest_scores_table {
+  border-style: solid;
+  border-color: orangered;
+  border-width: 2px;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
+  border-collapse: collapse;
+  color: rgba(10, 10, 9, 0.9);
+}
+
+#highest_scores_table tr{
+  text-align: center;
+  border-bottom: 2px double orangered;
+}
+
+#highest_scores_table th{
+  border-right: 2px solid orangered;
+  background-color: rgba(245, 113, 52, 0.7);
+  color: rgb(0, 20, 199);
+}
+
+#highest_scores_table td{
+  border-right: 2px solid orangered;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.disp_flex {
+  display: flex;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_space_evenly {
+  justify-content: space-evenly;
+}
+
+.button {
+  color: rgb(0, 20, 199);
+  font-weight: bold;
+  margin-right: 3%;
+}
+
+.errorField{
+  border-color: red;
+  border-radius: 3px;
+}
+.errorMessage  { color: red }
+
+.score_timer{
+  font-size: 20pt;
+  font-weight: bold;
+  color: rgb(0, 20, 199);
+}
+
+.red_sign_out_button {
+  color: red;
 }

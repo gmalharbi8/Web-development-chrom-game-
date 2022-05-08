@@ -5,6 +5,10 @@ let backgroundImage;
 let obstacles = [];
 let soundClassifier;
 let gameStarted;
+let score;
+let startTime;
+let endTime;
+let scoreElement;
 
 function preload() {
   const options = {
@@ -28,6 +32,8 @@ function setup() {
   soundClassifier.classify(gotCommand);
   background(backgroundImage);
   player.display();
+  score = 0;
+  scoreElement = document.getElementById("score");
 }
 
 
@@ -43,13 +49,16 @@ function gotCommand(error, results) {
 }
 
 function keyPressed() {
-  if (key == ' ') {
+  if (key == 'ArrowUp') {
     player.jump();
   }
 }
 
 function startGame() {
   gameStarted = true;
+  startTime = getCurrentMillisecond();
+  reset();
+  start();
   loop();
 }
 
@@ -58,6 +67,7 @@ function restartGame() {
   obstacles = [];
   background(backgroundImage);
   player.display();
+  score = 0;
 }
 
 function draw() {
@@ -70,6 +80,14 @@ function draw() {
       obstacle.move();
       obstacle.display();
       if (player.isCollision(obstacle)) {
+        noLoop();
+        pause();
+        endTime = getCurrentMillisecond();
+        // console.log("currentUserId", getCookie("currentUserId"));
+        // console.log("startTime", startTime);
+        // console.log("endTime", endTime);
+        // console.log("score", score);
+        sendData(getCookie("currentUserId"), startTime, endTime, score);
         Swal.fire({
           title: 'Game Over',
           icon: 'warning',
@@ -79,11 +97,26 @@ function draw() {
           confirmButtonText: 'Retry'
         }).then((result) => {
           restartGame();
+          // console.log("result: ", result);
           if (result.isConfirmed) {
             loop();
+            reset();
+            start();
+            startTime = getCurrentMillisecond();
+            scoreElement.innerHTML = 0;
+          } else if (result.dismiss === "cancel") {
+            // Simulate an HTTP redirect
+            window.location.replace("./highest_scores.php");
           }
         });
-        noLoop();
+      } else if (player.isOvershoot(obstacle)) {
+        index = obstacles.indexOf(obstacle);
+        if (index > -1) {
+          obstacles.splice(index, 1);
+        }
+        score++;
+        scoreElement.innerHTML = score;
+        // console.log("score: " + score);
       }
     }
     player.display();
@@ -91,22 +124,66 @@ function draw() {
   }
 }
 
+function getCookie(cookieName) {
+  let name = cookieName + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let cookieArray = decodedCookie.split(';');
+  for (let i = 0; i < cookieArray.length; i++) {
+    let temp = cookieArray[i];
+    while (temp.charAt(0) == ' ') {
+      temp = temp.substring(1);
+    }
+    if (temp.indexOf(name) == 0) {
+      return temp.substring(name.length, temp.length);
+    }
+  }
+  return "";
+}
+
+// send data to save it in DB
+function sendData(userId, startTime, endTime, score) {
+  $.ajax({
+    type: 'POST',
+    url: './saveScore.php',
+    dataType: "json",
+    data: (
+      {
+        "userId": userId,
+        "startTime": startTime,
+        "endTime": endTime,
+        "score": score
+      }),
+    success: function (data) {
+      // console.log(data);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      // console.log(jqXHR);
+      // console.log(textStatus);
+      // console.log(errorThrown);
+    }
+  });
+  return false;
+}
+
+function getCurrentMillisecond() {
+  return new Date().getTime();
+}
+
 let hour = 0;
 let minute = 0;
 let second = 0;
 let millisecond = 0;
-let cron;
-document.form_main.start.onclick = () => start();
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+let timerId;
 
 function start() {
   pause();
-  cron = setInterval(() => { timer(); }, 10);
+  timerId = setInterval(() => { timer(); }, 10);
 }
+
 function pause() {
-  clearInterval(cron);
+  clearInterval(timerId);
 }
+
 function reset() {
   hour = 0;
   minute = 0;
@@ -115,7 +192,6 @@ function reset() {
   document.getElementById('hour').innerText = '00';
   document.getElementById('minute').innerText = '00';
   document.getElementById('second').innerText = '00';
-  document.getElementById('millisecond').innerText = '000';
 }
 
 function timer() {
@@ -134,8 +210,8 @@ function timer() {
   document.getElementById('hour').innerText = returnData(hour);
   document.getElementById('minute').innerText = returnData(minute);
   document.getElementById('second').innerText = returnData(second);
-  document.getElementById('millisecond').innerText = returnData(millisecond);
 }
+
 function returnData(input) {
   return input > 10 ? input : `0${input}`
 }
