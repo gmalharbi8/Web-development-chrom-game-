@@ -1,7 +1,6 @@
 # Web-development-chrom-game-
-we are imam university student and this project describes how to create a web game using front end languages: HTML,CSS,PHP,Ajax,JS.
+We are imam university students and this project describes how to create a web game using languages: HTML, CSS, JS, PHP, Ajax.<br /><br />
 overview of our project:
-
 In this project, we build a dynamic website which is a makeover of the famous Google Chrome Dinosaur Game, but with more distinguishing and advanced properties. It's called 'Crash Game'. Our target audience is anyone who wants to enjoy a dynamic competitive game.
 
 # Look & Feel:
