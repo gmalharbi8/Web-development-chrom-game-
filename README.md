@@ -23,3 +23,29 @@ Database structure: The database consists of two tables, one called user to stor
 ![image](https://user-images.githubusercontent.com/93717241/167278709-1cd58bf9-cd3c-4ce8-a1be-b72ceea75c53.png).
 
 By using draw.io tool
+
+## References:
+tackoverflow:
+https://stackoverflow.com
+
+w3schools:
+https://www.w3schools.com
+
+css-tricks:
+https://css-tricks.com
+
+c-sharpcorner:
+https://www.c-sharpcorner.com
+
+code.tutsplus:
+https://code.tutsplus.com
+
+gifer:
+https://gifer.com/en/YzDG
+
+Crash character:
+https://www.pngegg.com/en/png-bxplc
+
+Game background:
+https://wallpaperaccess.com/crash-team-racing-nitro-fueled
+
