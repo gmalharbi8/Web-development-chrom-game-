@@ -26,6 +26,33 @@ Database structure: The database consists of two tables, one called user to stor
 
 By using draw.io tool
 
+## output of game:
+
+sign in:
+
+![3063151A-55BF-49A4-BC82-CF1D5D51E476](https://user-images.githubusercontent.com/102873246/167279144-eca6e623-3e49-4ed8-944a-d3ab904ad941.jpeg)
+
+sign up:
+
+![134FC677-AEE0-413A-854D-B919724DAC66](https://user-images.githubusercontent.com/102873246/167279153-fa017d60-262f-4f2c-9262-f93bcd84ad66.jpeg)
+
+start of the game:
+
+![9B154BB9-9A8F-48A5-A415-FAFC86A794D4](https://user-images.githubusercontent.com/102873246/167279175-a281e2b8-e498-4ca4-946d-70639fb105c3.jpeg)
+
+
+game over:
+
+![2E52458F-D712-47BF-BB4F-9E2D7F7DDB5D](https://user-images.githubusercontent.com/102873246/167279190-46ccae6d-be0f-4391-b9e6-7454173d1664.jpeg)
+
+hieghst scores:
+
+![011033E4-A248-4CB1-A230-E9645A55824E](https://user-images.githubusercontent.com/102873246/167279198-b40fcc16-3e4c-45dc-8de1-f5503da5e09f.jpeg)
+
+
+
+
+
 ## References:
 tackoverflow:
 https://stackoverflow.com
