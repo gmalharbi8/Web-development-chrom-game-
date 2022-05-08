@@ -54,7 +54,8 @@ By using draw.io tool
 
 ### Highest Scores:
 
-![6C946D66-6023-49CB-984E-2D38CE5D1FC8](https://user-images.githubusercontent.com/102873246/167279357-b4e70692-01e5-48f4-b62f-4680d30f5a4f.jpeg)
+![B81026A0-1B28-4C1A-B455-B24CB252B1DA](https://user-images.githubusercontent.com/102873246/167279857-694c4a87-b1e5-4b56-ad49-991d6477ed49.jpeg)
+
 
 
 
