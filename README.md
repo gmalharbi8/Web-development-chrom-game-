@@ -1,6 +1,6 @@
 # Web-development-chrom-game-
 
-## overview of our project:
+## Overview of Our Project:
 In this project, we build a dynamic website which is a makeover of the famous Google Chrome Dinosaur Game, but with more distinguishing and advanced properties. It's called 'Crash Game'. Our target audience is anyone who wants to enjoy a dynamic competitive game.
 
 # Look & Feel:
@@ -17,7 +17,7 @@ Due to the use of php language and its embedding in web pages (html), we have in
 
 3.sign_up.php (sign_up_script.js)
 
-# Business logic:
+# Business Logic:
 
 Database structure: The database consists of two tables, one called user to store users’ accounts information and the other table is called score_history to store each player’s scores. User table has 4 parameters, ID which is a primary key, EMAIL, NAME, and PASSWORD, while score_history has a composite key of USER_ID as a foreign key from the primary key of the user table, START_TIME, and END_TIME, and another parameter called SCORE.<br /><br />
 We have added a file containing database methods (database.php) as connect, select, insert and close.<br />
