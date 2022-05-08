@@ -11,6 +11,7 @@ This game is a makeover of the google dinosaur, the concept is inspired by Crash
 Dynamic Components:
 
 Due to the use of php language and its embedding in web pages (html), we have included JavaScript files in these php files:
+
 1.game.php (player.js, obstacle.js, sketch.js)
 
 2.index.php (sign_in_script.js)
