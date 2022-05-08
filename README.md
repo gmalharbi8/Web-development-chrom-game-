@@ -36,20 +36,25 @@ By using draw.io tool
 # Output Of The Game:
 
 SignIn: 
+
 ![024F1143-377C-493F-972B-88276962C209](https://user-images.githubusercontent.com/102873246/167279329-edbc65ad-cb31-4356-9aaa-a6646631deaa.jpeg)
 
 SignUp:
+
 ![6C47328F-F307-4338-B585-395D3F60318E](https://user-images.githubusercontent.com/102873246/167279333-3909b012-62e5-4fd4-8f58-3c74938ae306.jpeg)
 
 Start Of Game:
+
 ![4BBAA827-B625-484E-97CE-DE50784E9B82](https://user-images.githubusercontent.com/102873246/167279341-aa1a1fa4-3ff8-4500-9794-daf3747f9342.jpeg)
 
 
 GameOver:
+
 ![FE0BB400-DC83-46DE-B2EC-943E0BC2F438](https://user-images.githubusercontent.com/102873246/167279346-4066a7d6-f2c2-41a6-8352-2af97d406370.jpeg)
 
 
 Highest Scores:
+
 ![6C946D66-6023-49CB-984E-2D38CE5D1FC8](https://user-images.githubusercontent.com/102873246/167279357-b4e70692-01e5-48f4-b62f-4680d30f5a4f.jpeg)
 
 
